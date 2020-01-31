@@ -52,7 +52,7 @@ insert into Generos(Nome)
 values ('Romance'),('Terror'),('Suspense'),('Comedia'),('Aventura');
 
 insert into Livros (Titulo, IdAutor, IdGenero)
-values ('ttt', 5, 5)
+values ('ttt', 2, 6)
 
 
 update Generos
@@ -68,3 +68,16 @@ where IdAutor = 1;
 
 delete from Livros
 where IdAutor = 1;
+
+select Nome from Generos;
+select NomeAutor from Autores;
+select Titulo from Livros;
+
+select IdAutor, Titulo from Livros
+where IdAutor = 1;
+
+select IdLivros, Titulo, IdGenero from Livros
+where IdGenero = 1;
+
+select IdLivros, Titulo, IdAutor, IdGenero from Livros
+where IdAutor = 2;

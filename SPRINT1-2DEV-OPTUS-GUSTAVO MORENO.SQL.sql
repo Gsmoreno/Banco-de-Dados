@@ -57,7 +57,7 @@ insert into Artista(Nome)
 values ('Mc Davi'),('Pelé'),('Vitinho Avassalador');
 
 insert into Albuns (NomeAlbum, DataDeLançamento, Localizacao, Minutos, Visualizacao, IdArtista, IdEstilo)
-values ('Pc','29/01/2020', 'SP', 30, 'Aberta', 1, 2);
+values ('asass','2/01/2020', 'SP', 50, 'Aberta', 4, 1);
 
 insert into Cliente (NomeCliente, Email, Senha, Tipo)
 values ('Juseslaine', 'cleide@gmail.com', 'ju@13423', 'USER');
@@ -81,6 +81,53 @@ truncate table Albuns
 delete from Albuns
 where IdAlbum = 1;
 
+
+--DQL Linguagem de consulta de dados
+
+select * from Artista;
+select Nome from Artista;
+select NomeAlbum, DataDeLançamento from Albuns;
+
+-- Operadores <> =
+select * from Albuns where IdAlbum = 1;
+
+select * from Albuns where IdAlbum > 1;
+
+-- OR OU
+
+select NomeAlbum, Minutos from Albuns
+where (DataDeLançamento is null) or (Localizacao is null);
 	
+--LIKE
+
+select IdAlbum, NomeAlbum from Albuns
+Where NomeAlbum LIKE  '%Pc%' -- no meio da frase
+
+select IdAlbum, NomeAlbum from Albuns
+Where NomeAlbum LIKE  'Pc%' -- no começo da frase
+
+select IdAlbum, NomeAlbum from Albuns
+Where NomeAlbum LIKE  '%Pc' -- no final da frase
+
+--Ordenação
+select NomeAlbum from Albuns
+order by NomeAlbum;
+
+select idAlbum, NomeAlbum, Minutos from Albuns
+order by Minutos;
 
 
+-- count a quantidae de linhas
+select count (IdAlbum) from Albuns;
+
+select IdArtista, NomeAlbum from Albuns
+where  IdArtista =  3;
+
+select IdAlbum, DataDeLançamento from Albuns
+where DataDeLançamento = '1/01/2020';
+
+select IdArtista, IdEstilo from Albuns
+where IdEstilo = 2;
+
+select IdAlbum, IdArtista, DataDeLançamento from Albuns
+order by DataDeLançamento;
