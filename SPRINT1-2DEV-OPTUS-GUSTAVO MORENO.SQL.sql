@@ -131,3 +131,18 @@ where IdEstilo = 2;
 
 select IdAlbum, IdArtista, DataDeLançamento from Albuns
 order by DataDeLançamento;
+
+--Usando join
+select Artista.Nome, Albuns.NomeAlbum from Artista
+inner join Albuns on Artista.IdArtista = 2;
+
+select * from Artista
+inner join Albuns on Artista.IdArtista = Albuns.IdArtista
+where DataDeLançamento = '1/01/2020';
+
+select * from Albuns order by DataDeLançamento asc;
+
+select  Estilo.NomeEstilo, Artista.Nome from Artista
+inner join Albuns on Artista.IdArtista = Albuns.IdArtista
+inner join Estilo on Albuns.IdEstilo = Estilo.IdEstilo
+where Estilo.IdEstilo = 2;
